@@ -8,4 +8,9 @@
     <string name="am_button4_string">Настройки</string>
     <string name="am_button5_string">Сменить пользователя</string>
     <string name="am_button6_string">Сохранить и Выйти</string>
+    <string name="sign_in_string">Sign In / Вход</string>
+    <string name="la_login_string">Login:</string>
+    <string name="la_password_string">Password:</string>
+    <string name="la_apply_button_string">Apply</string>
+    <string name="la_reg_button_string">Registration</string>
 </resources>
