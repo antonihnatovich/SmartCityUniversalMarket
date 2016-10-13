@@ -18,8 +18,8 @@
             <TextView
                 android:id="@+id/name_of_program_main"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/program_name"
                 android:textColor="@android:color/holo_green_dark"
@@ -29,7 +29,7 @@
             <ImageView
                 android:id="@+id/imageview_main"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="250dp"
                 android:layout_below="@+id/name_of_program_main"
                 android:contentDescription="@string/image_main"
                 android:src="@drawable/regnum_picture_1470041961499558_normal" />
@@ -42,31 +42,41 @@
 
 
                 <Button
-                    style="@style/mainActivityButtonStyle"
                     android:id="@+id/am_button1"
-                    android:text="@string/am_button1_string" />
+                    style="@style/mainActivityButtonStyle"
+                    android:text="@string/am_button1_string"
+                    android:drawableStart="@drawable/pokupki"/>
 
                 <Button
-                    style="@style/mainActivityButtonStyle"
                     android:id="@+id/am_button2"
-                    android:text="@string/am_button2_string" />
+                    style="@style/mainActivityButtonStyle"
+                    android:text="@string/am_button2_string"
+                    android:drawableStart="@drawable/korzina"/>
 
                 <Button
-                    style="@style/mainActivityButtonStyle"
                     android:id="@+id/am_button3"
-                    android:text="@string/am_button3_string" />
+                    style="@style/mainActivityButtonStyle"
+                    android:text="@string/am_button3_string"
+                    android:drawableStart="@drawable/last_ordered"/>
 
                 <Button
-                    style="@style/mainActivityButtonStyle"
                     android:id="@+id/am_button4"
-                    android:text="@string/am_button4_string" />
+                    style="@style/mainActivityButtonStyle"
+                    android:text="@string/am_button4_string"
+                    android:drawableStart="@drawable/settings"/>
 
                 <Button
                     style="@style/mainActivityButtonStyle"
                     android:id="@+id/am_button5"
-                    android:text="@string/am_button5_string" />
-            </LinearLayout>
+                    android:text="@string/am_button5_string"
+                    android:drawable="@drawable/change_user"/>
 
+                <Button
+                    android:id="@+id/am_button6"
+                    style="@style/mainActivityButtonStyle"
+                    android:text="@string/am_button6_string"
+                    android:drawableStart="@drawable/quit"/>
+            </LinearLayout>
 
         </RelativeLayout>
 

@@ -6,5 +6,6 @@
     <string name="am_button2_string">В корзину</string>
     <string name="am_button3_string">История покупок</string>
     <string name="am_button4_string">Настройки</string>
-    <string name="am_button5_string">Сохранить и Выйти</string>
+    <string name="am_button5_string">Сменить пользователя</string>
+    <string name="am_button6_string">Сохранить и Выйти</string>
 </resources>
