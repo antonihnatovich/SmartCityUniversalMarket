@@ -4,7 +4,7 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/buttonBackgroundMain"
+    android:background="@color/colorButtonBackgroundMain"
     android:orientation="vertical"
     tools:context="com.l.smartcityuniversalmarket.LoginActivity">
 
@@ -27,81 +27,68 @@
             android:text="@string/sign_in_string"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="26dp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/la_login_string"
-                android:textColor="#FF000000"
-                android:textSize="22sp" />
+                android:background="#FFFFFF"
+                android:orientation="horizontal">
 
-            <EditText
-                android:layout_marginStart="42dp"
-                android:id="@+id/edit_text_login"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                <TextView
+                    style="@style/textViewLoginActivityStandart"
+                    android:text="@string/la_login_string" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edit_text_login"
+                    style="@style/editTextLoginActivityStandart"
+                    android:layout_marginStart="42dp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/la_password_string"
-                android:textColor="#FF000000"
-                android:textSize="22sp" />
+                android:background="#FFFFFF"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/edit_text_password"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                <TextView
+                    style="@style/textViewLoginActivityStandart"
+                    android:text="@string/la_password_string" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="#FFFFFF">
-            <Button
-                android:id="@+id/la_apply_button"
-                android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/edit_text_password"
+                    style="@style/editTextLoginActivityStandart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/la_apply_button_string"
-                android:layout_gravity="start"
-                android:textSize="18dp"
-                android:background="#FFc9c9c9"
-                />
-            <Button
-                android:layout_marginStart="7dp"
-                android:id="@+id/la_register_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/la_reg_button_string"
-                android:layout_gravity="end"
-                android:textSize="18dp"
-                android:background="@android:color/holo_green_light"/>
+                android:background="#FFFFFF"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/la_apply_button"
+                    style="@style/buttonLoginActivityStandart"
+                    android:layout_gravity="start"
+                    android:text="@string/la_apply_button_string" />
+
+                <Button
+                    android:id="@+id/la_register_button"
+                    style="@style/buttonLoginActivityStandart"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="7dp"
+                    android:text="@string/la_reg_button_string"
+                    android:background="@color/colorButtonLoginActivity"/>
+
+            </LinearLayout>
 
         </LinearLayout>
-
-        </LinearLayout>
-
 
     </LinearLayout>
-
 
 </LinearLayout>

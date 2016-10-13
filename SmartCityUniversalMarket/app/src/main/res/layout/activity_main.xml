@@ -61,7 +61,7 @@
                 <Button
                     android:id="@+id/am_button5"
                     style="@style/mainActivityButtonStyle"
-                    android:drawable="@drawable/change_user"
+                    android:drawableStart="@drawable/change_user"
                     android:text="@string/am_button5_string" />
 
                 <Button
