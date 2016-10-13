@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SmartCityUniversalMarket</string>
+    <string name="program_name">Universal Market</string>
+    <string name="image_main">Image of program</string>
+    <string name="am_button1_string">К покупкам</string>
+    <string name="am_button2_string">В корзину</string>
+    <string name="am_button3_string">История покупок</string>
+    <string name="am_button4_string">Настройки</string>
+    <string name="am_button5_string">Сохранить и Выйти</string>
+</resources>
