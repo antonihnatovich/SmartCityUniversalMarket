@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFFFF"
+    android:background="@color/backViewColor"
     tools:context="com.l.smartcityuniversalmarket.MainActivity">
 
     <ScrollView
@@ -25,7 +25,8 @@
                 android:layout_height="250dp"
                 android:layout_below="@+id/name_of_program_main"
                 android:contentDescription="@string/image_main"
-                android:src="@drawable/regnum_picture_1470041961499558_normal" />
+                android:src="@drawable/tyt"
+                android:scaleType="fitCenter"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

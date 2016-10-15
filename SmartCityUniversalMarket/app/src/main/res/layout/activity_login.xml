@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorButtonBackgroundMain"
+    android:background="@color/backgroundColorWhiteOrOrangeAllActivities"
     android:orientation="vertical"
     tools:context="com.l.smartcityuniversalmarket.LoginActivity">
 
@@ -12,12 +12,22 @@
         android:id="@+id/name_of_program_login"
         style="@style/programNameTextView" />
 
+    <ImageView
+        android:id="@+id/imageview_login"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/name_of_program_login"
+        android:contentDescription="@string/image_main"
+        android:src="@drawable/tyt"
+        android:scaleType="fitCenter"/>
+
     <LinearLayout
+        android:layout_below="@id/imageview_login"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="70dp"
-        android:background="#FFFFFF"
+        android:layout_gravity="center_horizontal"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
         android:orientation="vertical">
 
         <TextView
@@ -25,11 +35,11 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/sign_in_string"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@color/textViewLoginPasswordApplyColorLoginActivity"
             android:textSize="26sp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
@@ -37,7 +47,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
                 android:orientation="horizontal">
 
                 <TextView
@@ -48,13 +57,13 @@
                     android:id="@+id/edit_text_login"
                     style="@style/editTextLoginActivityStandart"
                     android:layout_marginStart="42dp"
+                    android:text="@string/la_id_edit_text_string"
                     android:inputType="number" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
                 android:orientation="horizontal">
 
                 <TextView
@@ -64,28 +73,29 @@
                 <EditText
                     android:id="@+id/edit_text_password"
                     style="@style/editTextLoginActivityStandart"
+                    android:text="@string/la_password_edit_text_string"
                     android:inputType="numberPassword" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/la_apply_button"
                     style="@style/buttonLoginActivityStandart"
-                    android:layout_gravity="start"
                     android:text="@string/la_apply_button_string" />
 
                 <Button
                     android:id="@+id/la_register_button"
                     style="@style/buttonLoginActivityStandart"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="7dp"
-                    android:background="@color/colorButtonLoginActivity"
-                    android:text="@string/la_reg_button_string" />
+                    android:background="@color/backgroundColorWhiteOrOrangeAllActivities"
+                    android:nextFocusDown="@id/la_apply_button"
+                    android:textAllCaps="false"
+                    android:textSize="19sp"
+                    android:textColor="@color/frontViewColor"
+                    android:text="@string/la_register_button_string" />
 
             </LinearLayout>
 
@@ -97,4 +107,4 @@
         android:layout_height="wrap_content"
         android:id="@+id/responceView"/>
 
-</LinearLayout>
+</RelativeLayout>

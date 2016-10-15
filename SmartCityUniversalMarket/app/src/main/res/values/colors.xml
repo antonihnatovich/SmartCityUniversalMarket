@@ -4,6 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorButtonBackgroundMain">#FFFFFF</color>
-    <color name="colorIconMain">@android:color/holo_green_dark</color>
-    <color name="colorButtonLoginActivity">@android:color/holo_green_light</color>
+    <color name="colorIconGreenOrOrangeAllActivities">@color/frontViewColor</color>
+    <color name="colorButtonLoginActivity">@color/frontViewColor</color>
+    <color name="textViewLoginPasswordApplyColorLoginActivity">@color/frontViewColor</color>
+    <color name="backgroundColorWhiteOrOrangeAllActivities">@color/backViewColor</color>
+    <color name="textColorGreenOrOrangeAllActivities">@color/frontViewColor</color>
+    <color name="editTextStringInsideColorAllActivities">#FFFFFF</color>
+
+    <color name="backViewColor">#FF000000</color>
+    <color name="frontViewColor">@android:color/holo_green_dark</color>
 </resources>

@@ -7,11 +7,12 @@
     </style>
 
     <style name="mainActivityButtonStyle">
-        <item name="android:background">@color/colorButtonBackgroundMain</item>
+        <item name="android:background">@color/backViewColor</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/holo_green_dark</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:layout_gravity">center_horizontal|left</item>
     </style>
 
@@ -19,7 +20,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">32dp</item>
         <item name="android:textSize">30sp</item>
-        <item name="android:textColor">@android:color/holo_green_dark</item>
+        <item name="android:textColor">@color/textColorGreenOrOrangeAllActivities</item>
         <item name="android:text">@string/program_name</item>
         <item name="android:textStyle">normal</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
@@ -29,20 +30,22 @@
     <style name="textViewLoginActivityStandart">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#FF000000</item>
+        <item name="android:textColor">@color/textViewLoginPasswordApplyColorLoginActivity</item>
         <item name="android:textSize">22sp</item>
     </style>
 
     <style name="editTextLoginActivityStandart">
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/editTextStringInsideColorAllActivities</item>
     </style>
 
     <style name="buttonLoginActivityStandart">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@color/textColorGreenOrOrangeAllActivities</item>
     </style>
 
 </resources>

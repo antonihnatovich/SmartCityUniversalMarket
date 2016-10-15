@@ -13,4 +13,7 @@
     <string name="la_password_string">Password:</string>
     <string name="la_apply_button_string">Apply</string>
     <string name="la_reg_button_string">Registration</string>
+    <string name="la_register_button_string">Not registered yet?</string>
+    <string name="la_password_edit_text_string">password</string>
+    <string name="la_id_edit_text_string">Id</string>
 </resources>
