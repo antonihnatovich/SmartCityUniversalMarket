@@ -11,10 +11,22 @@
     <string name="sign_in_string">Sign In | Вход</string>
     <string name="la_login_string">Login:</string>
     <string name="la_password_string">Password:</string>
-    <string name="la_apply_button_string">Apply</string>
+    <string name="la_apply_button_string">Вход</string>
     <string name="la_reg_button_string">Registration</string>
-    <string name="la_register_button_string">Not registered yet?</string>
+    <string name="la_register_button_string">Еще не зарегистрированы?</string>
     <string name="la_password_edit_text_string">password</string>
     <string name="la_id_edit_text_string">Id</string>
-    <string name="la_forgot_password_string">Forgot password?</string>
+    <string name="la_forgot_password_string">Забыли пароль?</string>
+    <string name="fl_welcome_string">Добро Пожаловать</string>
+    <string name="fl_long_text_string">Будущее наступило. Время быстрых и удобных покупок различного плана прямо с дивана пришло. Удобно, быстро, интересно. Среднестатистический покупатель на поход в супермаркет тратит 30 минут. Экономьте ваше время и деньги. Создавайте избранные списки покупок. Наблюдайте за вашими прошлыми покупками. Делитесь списком покупок с членами семьи. Продукт Universal Market поможет вам в этом.</string>
+    <string name="fl_team_name_string">SmartCityBelarus</string>
+    <string name="fl_registration_string">Регистрация</string>
+    <string name="ra_email_string">Email</string>
+    <string name="ra_email_edit_text_string">Your mail address</string>
+    <string name="ra_mobile_number_string">Mobile number</string>
+    <string name="ra_number_edit_text_string">Number</string>
+    <string name="ra_password_string">Password</string>
+    <string name="ra_password_edit_text_string">Password</string>
+    <string name="ra_create_account_string">Создать аккаунт</string>
+    <string name="ra_to_login_button_string">Уже есть аккаунт? Вход</string>
 </resources>

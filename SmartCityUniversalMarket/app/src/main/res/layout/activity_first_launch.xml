@@ -24,45 +24,38 @@
                 style="@style/imageViewAppIconAllActivities"
                 android:layout_below="@id/name_of_program_fl"
                 android:contentDescription="@string/image_main" />
+
             <TextView
-                android:layout_width="match_parent"
                 android:id="@+id/fl_welcome_text_view"
+                style="@style/firstLaunchTextViewGeneral"
                 android:layout_below="@id/imageview_fl"
-                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Добро Пожаловать"
-                android:textColor="@color/frontViewColor"
-                android:textSize="20sp"
-                />
+                android:text="@string/fl_welcome_string"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/fl_maintext_text_view"
+                style="@style/firstLaunchTextViewGeneral"
                 android:layout_below="@id/fl_welcome_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Будущее наступило. Время быстрых и удобных покупок различного плана прямо с дивана пришло. Удобно, быстро, интересно. Среднестатистический покупатель на поход в супермаркет тратит 30 минут. Экономьте ваше время и деньги. Создавайте избранные списки покупок. Наблюдайте за вашими прошлыми покупками. Делитесь списком покупок с членами семьи. Продукт Universal Market поможет вам в этом."
-                android:textColor="@color/frontViewColor"
-                android:textSize="16sp"
-                />
+                android:layout_marginStart="20dp"
+                android:text="@string/fl_long_text_string" />
+
             <TextView
                 android:id="@+id/fl_team_name_text_view"
+                style="@style/firstLaunchTextViewGeneral"
                 android:layout_below="@id/fl_maintext_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SmartCityBelarus"
-                android:textColor="@color/frontViewColor"
-                android:textSize="16sp"
-                android:textAlignment="textEnd"/>
+                android:text="@string/fl_team_name_string"
+                android:textAlignment="textEnd" />
 
-                <Button
-                    android:id="@+id/fl_enter_button"
-                    android:layout_below="@id/fl_team_name_text_view"
-                    style="@style/buttonLoginActivityStandart"
-                    android:background="@color/backViewColor"
-                    android:textColor="@color/editTextStringInsideColorAllActivities"
-                    android:text="Регистрация"
-                    android:gravity="center"/>
+            <Button
+                android:id="@+id/fl_enter_button"
+                style="@style/buttonLoginActivityStandart"
+                android:layout_below="@id/fl_team_name_text_view"
+                android:background="@color/backViewColor"
+                android:gravity="center"
+                android:text="@string/fl_registration_string"
+                android:textColor="@color/editTextStringInsideColorAllActivities" />
 
 
         </RelativeLayout>

@@ -28,81 +28,53 @@
 
         <TextView
             android:id="@+id/name_text_view_registration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textAllCaps="false"
-            android:textColor="@color/textColorGreenOrOrangeAllActivities"
-            android:textSize="18dp" />
+            style="@style/textViewLoginAndRegistrationActivities"
+            android:layout_marginTop="0dp"
+            android:text="@string/ra_email_string" />
 
         <EditText
             android:id="@+id/name_edit_text_registration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/editTextLoginAndRegistrationActivities"
             android:inputType="textEmailAddress"
-            android:text="Your mail address"
-            android:textAllCaps="false"
-            android:textColor="@color/editTextStringInsideColorAllActivities"
-            android:textSize="17dp" />
+            android:text="@string/ra_email_edit_text_string" />
 
         <TextView
             android:id="@+id/login_text_view_registration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="Mobile number"
-            android:textAllCaps="false"
-            android:textColor="@color/textColorGreenOrOrangeAllActivities"
-            android:textSize="18dp" />
+            style="@style/textViewLoginAndRegistrationActivities"
+            android:text="@string/ra_mobile_number_string" />
 
         <EditText
             android:id="@+id/id_edit_text_registration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/editTextLoginAndRegistrationActivities"
             android:inputType="phone"
-            android:text="Number"
-            android:textAllCaps="false"
-            android:textColor="@color/editTextStringInsideColorAllActivities"
-            android:textSize="17dp" />
+            android:text="@string/ra_number_edit_text_string" />
 
         <TextView
             android:id="@+id/password_text_view_registration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="Password"
-            android:textAllCaps="false"
-            android:textColor="@color/textColorGreenOrOrangeAllActivities"
-            android:textSize="18dp" />
+            style="@style/textViewLoginAndRegistrationActivities"
+            android:text="@string/ra_password_string" />
 
         <EditText
             android:id="@+id/password_edit_text_registration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/editTextLoginAndRegistrationActivities"
             android:inputType="numberPassword"
-            android:text="Password"
-            android:textAllCaps="false"
-            android:textColor="@color/editTextStringInsideColorAllActivities"
-            android:textSize="17dp" />
+            android:text="@string/ra_password_edit_text_string" />
 
         <Button
             android:id="@+id/ra_ready_register_button"
             style="@style/buttonLoginActivityStandart"
             android:layout_marginTop="5dp"
-            android:text="Create account" />
+            android:text="@string/ra_create_account_string" />
 
         <Button
             android:id="@+id/ra_login_button"
             style="@style/buttonLoginActivityStandart"
             android:background="@color/backgroundColorWhiteOrOrangeAllActivities"
             android:nextFocusDown="@id/la_apply_button"
-            android:text="Already a member? Login"
+            android:text="@string/ra_to_login_button_string"
             android:textAllCaps="false"
-            android:textColor="@color/frontViewColor"
-            android:textSize="19sp" />
-
+            android:textColor="@color/frontViewColor" />
 
     </LinearLayout>
-
 
 </RelativeLayout>

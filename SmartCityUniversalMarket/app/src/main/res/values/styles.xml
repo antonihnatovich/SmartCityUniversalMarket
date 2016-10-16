@@ -45,7 +45,6 @@
         <item name="android:layout_height">37dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#FFFFFF</item>
-
         <item name="android:background">@color/textColorGreenOrOrangeAllActivities</item>
     </style>
 
@@ -54,5 +53,30 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:src">@drawable/tyt</item>
         <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="editTextLoginAndRegistrationActivities">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/editTextStringInsideColorAllActivities</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="textViewLoginAndRegistrationActivities">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:textColor">@color/textColorGreenOrOrangeAllActivities</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="firstLaunchTextViewGeneral">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/frontViewColor</item>
+
     </style>
 </resources>
