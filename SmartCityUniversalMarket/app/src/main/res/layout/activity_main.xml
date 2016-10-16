@@ -21,12 +21,9 @@
 
             <ImageView
                 android:id="@+id/imageview_main"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
+                style="@style/imageViewAppIconAllActivities"
                 android:layout_below="@+id/name_of_program_main"
-                android:contentDescription="@string/image_main"
-                android:src="@drawable/tyt"
-                android:scaleType="fitCenter"/>
+                android:contentDescription="@string/image_main" />
 
             <LinearLayout
                 android:layout_width="match_parent"

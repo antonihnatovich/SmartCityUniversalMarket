@@ -18,8 +18,8 @@
 
     <style name="programNameTextView">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">32dp</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:layout_height">39dp</item>
+        <item name="android:textSize">29sp</item>
         <item name="android:textColor">@color/textColorGreenOrOrangeAllActivities</item>
         <item name="android:text">@string/program_name</item>
         <item name="android:textStyle">normal</item>
@@ -42,10 +42,17 @@
 
     <style name="buttonLoginActivityStandart">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">37dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#FFFFFF</item>
+
         <item name="android:background">@color/textColorGreenOrOrangeAllActivities</item>
     </style>
 
+    <style name="imageViewAppIconAllActivities">
+        <item name="android:layout_height">210dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:src">@drawable/tyt</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
 </resources>
