@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_first_launch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backViewColor"
+    tools:context="com.l.smartcityuniversalmarket.FirstLaunchActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/name_of_program_fl"
+                style="@style/programNameTextView" />
+
+            <ImageView
+                android:id="@+id/imageview_fl"
+                style="@style/imageViewAppIconAllActivities"
+                android:layout_below="@id/name_of_program_fl"
+                android:contentDescription="@string/image_main" />
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/fl_welcome_text_view"
+                android:layout_below="@id/imageview_fl"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Добро Пожаловать"
+                android:textColor="@color/frontViewColor"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/fl_maintext_text_view"
+                android:layout_below="@id/fl_welcome_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Будущее наступило. Время быстрых и удобных покупок различного плана прямо с дивана пришло. Удобно, быстро, интересно. Среднестатистический покупатель на поход в супермаркет тратит 30 минут. Экономьте ваше время и деньги. Создавайте избранные списки покупок. Наблюдайте за вашими прошлыми покупками. Делитесь списком покупок с членами семьи. Продукт Universal Market поможет вам в этом."
+                android:textColor="@color/frontViewColor"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:id="@+id/fl_team_name_text_view"
+                android:layout_below="@id/fl_maintext_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SmartCityBelarus"
+                android:textColor="@color/frontViewColor"
+                android:textSize="16sp"
+                android:textAlignment="textEnd"/>
+
+                <Button
+                    android:id="@+id/fl_enter_button"
+                    android:layout_below="@id/fl_team_name_text_view"
+                    style="@style/buttonLoginActivityStandart"
+                    android:background="@color/backViewColor"
+                    android:textColor="@color/editTextStringInsideColorAllActivities"
+                    android:text="Регистрация"
+                    android:gravity="center"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</FrameLayout>
