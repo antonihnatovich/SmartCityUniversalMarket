@@ -11,10 +11,43 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    flavorDimensions "type", "location"
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            buildConfigField "String", "LOL", '"Hello from DEBUG version"'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "String", "LOL", '"Hello from release version"'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors{
+        free{
+            dimension "type"
+            minSdkVersion 21
+            versionName "api21"
+        }
+        paid {
+            dimension "type"
+            minSdkVersion 17
+            versionName "api17"
+        }
+        belarus{
+            dimension "location"
+        }
+        finland {
+            dimension "location"
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(
+                    output.outputFile.parent,
+                    output.outputFile.name.replace(".apk", "-${variant.versionName}.apk"))
+
         }
     }
 }
