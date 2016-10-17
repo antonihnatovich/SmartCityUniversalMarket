@@ -21,12 +21,12 @@ import com.google.api.server.spi.config.ApiNamespace;
 )
 public class MyEndpoint {
 
-    public static final String STATS_URL = "https://dl.dropboxusercontent.com/u/20755008/response.json";
+    public static final String TIME_URL = "http://www.timeapi.org/utc/now";
 
     @ApiMethod(name = "getStats")
     public MyBean getStats() {
         MyBean response = new MyBean();
-        String data = new HttpClient().get(STATS_URL);
+        String data = new HttpClient().get(TIME_URL);
         response.setData(data);
         return response;
     }
