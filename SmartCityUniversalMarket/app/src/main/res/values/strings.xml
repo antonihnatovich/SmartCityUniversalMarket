@@ -4,8 +4,8 @@
     <string name="image_main">Image of program</string>
     <string name="am_button1_string">К покупкам</string>
     <string name="am_button2_string">В корзину</string>
-    <string name="am_button3_string">История покупок</string>
-    <string name="am_button4_string">Настройки</string>
+    <string name="am_button3_string">Мой аккаунт</string>
+    <string name="am_button4_string">Настройки приложения</string>
     <string name="am_button5_string">Сменить пользователя</string>
     <string name="am_button6_string">Сохранить и Выйти</string>
     <string name="sign_in_string">Sign In | Вход</string>

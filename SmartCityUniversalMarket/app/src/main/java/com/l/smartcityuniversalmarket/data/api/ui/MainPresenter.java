@@ -4,9 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.l.smartcityuniversalmarket.BackendTestActivity;
 import com.l.smartcityuniversalmarket.backend.smartCityUniversalMarketAPI.SmartCityUniversalMarketAPI;
 import com.l.smartcityuniversalmarket.data.api.api.ApiManager;
 
