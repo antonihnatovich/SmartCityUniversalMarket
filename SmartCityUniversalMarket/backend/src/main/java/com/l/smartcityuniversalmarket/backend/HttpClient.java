@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class HttpClient {
@@ -24,10 +23,8 @@ public class HttpClient {
                 stringBuilder.append(line);
             }
             response = stringBuilder.toString();
+            reader.close();
             inputStream.close();
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
