@@ -1,13 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_settings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FF000000"
+    android:orientation="vertical"
     tools:context="com.l.smartcityuniversalmarket.SettingsActivity">
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF000000"
+        android:orientation="vertical">
 
-</RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="0.8"
+            android:text="Background Color"
+            android:textColor="@color/textColorGreenOrOrangeAllActivities"
+            android:textSize="26sp" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.2"
+            android:background="#FF0000"
+            android:paddingEnd="270dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="0.8"
+            android:text="Text Color"
+            android:textColor="@color/textColorGreenOrOrangeAllActivities"
+            android:textSize="26sp" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.1"
+            android:background="#FFEE00"
+            android:paddingEnd="270dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="0.8"
+            android:text="Text Size"
+            android:textColor="@color/textColorGreenOrOrangeAllActivities"
+            android:textSize="26sp" />
+
+        <Spinner
+            android:id="@+id/sa_spinner_size"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.2"
+            android:background="#FFFFFF">
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="0.8"
+            android:text="Font Style"
+            android:textColor="@color/textColorGreenOrOrangeAllActivities"
+            android:textSize="26sp" />
+
+        <Spinner
+            android:id="@+id/sa_spinner_font"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.2"
+            android:background="#FFFFFF">
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="0.8"
+            android:text="Save Mod"
+            android:textColor="@color/textColorGreenOrOrangeAllActivities"
+            android:textSize="26sp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:background="#FFFFFF" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_gravity="bottom"
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="70dp"
+        android:background="@android:color/black" >
+
+        <Button
+            android:id="@+id/sa_button_cancel"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Cancel"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/sa_button_apply"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Apply"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

@@ -15,14 +15,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/name_of_program_fl"
-                style="@style/programNameTextView" />
-
             <ImageView
                 android:id="@+id/imageview_fl"
                 style="@style/imageViewAppIconAllActivities"
-                android:layout_below="@id/name_of_program_fl"
                 android:contentDescription="@string/image_main" />
 
             <TextView

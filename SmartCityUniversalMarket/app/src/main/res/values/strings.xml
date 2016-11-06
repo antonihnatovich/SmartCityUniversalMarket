@@ -29,4 +29,42 @@
     <string name="ra_password_edit_text_string">Password</string>
     <string name="ra_create_account_string">Создать аккаунт</string>
     <string name="ra_to_login_button_string">Уже есть аккаунт? Вход</string>
+    <string-array name="size">
+        <item>Lower-Standart</item>
+        <item>Standart</item>
+        <item>Higher-Standart</item>
+    </string-array>
+    <string-array name="font">
+        <item>Bold</item>
+        <item>Normal</item>
+        <item>Italic</item>
+    </string-array>
+    <string-array name="types">
+        <item>Продукты питания</item>
+        <item>Гигиена и чистота</item>
+        <item>Электроника</item>
+        <item>Книжная продукция</item>
+    </string-array>
+    <string-array name="products">
+        <item>Мясная продукция</item>
+        <item>Хлебобулочные изделия</item>
+        <item>Консервированные продукты</item>
+        <item>Напитки</item>
+    </string-array>
+    <string-array name="cleaners">
+        <item>Мыло</item>
+        <item>Порошки</item>
+        <item>Чистящие средства</item>
+    </string-array>
+    <string-array name="electronics">
+        <item>Телевизоры</item>
+        <item>Компьютеры и ноутбуки</item>
+        <item>Телефоны</item>
+        <item>Аксессуары</item>
+    </string-array>
+    <string-array name="papers">
+        <item>Книги</item>
+        <item>Журналы</item>
+        <item>Газеты</item>
+    </string-array>
 </resources>

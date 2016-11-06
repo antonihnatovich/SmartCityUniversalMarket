@@ -8,14 +8,9 @@
     android:orientation="vertical"
     tools:context="com.l.smartcityuniversalmarket.LoginActivity">
 
-    <TextView
-        android:id="@+id/name_of_program_login"
-        style="@style/programNameTextView" />
-
     <ImageView
         android:id="@+id/imageview_login"
         style="@style/imageViewAppIconAllActivities"
-        android:layout_below="@id/name_of_program_login"
         android:contentDescription="@string/image_main" />
 
     <LinearLayout

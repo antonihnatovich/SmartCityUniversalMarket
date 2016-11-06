@@ -6,15 +6,9 @@
     android:layout_height="match_parent"
     android:background="@color/backViewColor"
     tools:context="com.l.smartcityuniversalmarket.RegistrationActivity">
-
-    <TextView
-        android:id="@+id/name_of_program_registration"
-        style="@style/programNameTextView" />
-
     <ImageView
         android:id="@+id/imageview_registration"
         style="@style/imageViewAppIconAllActivities"
-        android:layout_below="@+id/name_of_program_registration"
         android:contentDescription="@string/image_main" />
 
     <LinearLayout
