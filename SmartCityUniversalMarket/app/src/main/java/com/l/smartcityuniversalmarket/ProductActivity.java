@@ -21,6 +21,7 @@ public class ProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product);
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         fillData();
+        expandableListView.setAdapter(new ItemsExpandableListAdapter(this, objectsOfType, types));
 
     }
 
