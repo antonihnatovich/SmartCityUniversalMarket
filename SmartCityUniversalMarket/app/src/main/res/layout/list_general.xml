@@ -5,9 +5,10 @@
 <TextView
     android:id="@+id/textview_general"
     android:layout_width="match_parent"
+    android:textColor="@color/textColorGreenOrOrangeAllActivities"
     android:layout_height="100dp"
     android:text="KEK"
     android:textAlignment="center"
     android:textAllCaps="false"
-    android:textSize="30sp"/>
+    android:textSize="30sp" />
 </LinearLayout>

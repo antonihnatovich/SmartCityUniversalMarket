@@ -6,6 +6,7 @@
         android:id="@+id/textview_child"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:textColor="#FF0000"
         android:text="TEK"
         android:textAllCaps="false"
         android:textSize="25sp"

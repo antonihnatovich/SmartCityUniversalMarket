@@ -35,12 +35,14 @@ public class ProductActivity extends AppCompatActivity {
                 food[] = getResources().getStringArray(R.array.products),
                 clearness[] = getResources().getStringArray(R.array.cleaners),
                 electronic[] = getResources().getStringArray(R.array.electronics),
-                books[] = getResources().getStringArray(R.array.papers);
+                books[] = getResources().getStringArray(R.array.papers),
+                other[] = getResources().getStringArray(R.array.other);
 
         tmp.add(food);
         tmp.add(clearness);
         tmp.add(electronic);
         tmp.add(books);
+        tmp.add(other);
 
         for (String param : mass)
             objectsOfType.add(param);
@@ -49,7 +51,7 @@ public class ProductActivity extends AppCompatActivity {
             for (String toAdd : mas)
                 list.add(toAdd);
             types.put(objectsOfType.get(counter++), list);
-            list.clear();
+            list = new ArrayList<>();
         }
     }
 }
