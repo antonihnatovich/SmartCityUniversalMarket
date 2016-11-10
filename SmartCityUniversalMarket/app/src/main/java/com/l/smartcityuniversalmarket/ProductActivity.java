@@ -2,14 +2,16 @@ package com.l.smartcityuniversalmarket;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ProductActivity extends AppCompatActivity {
+public class ProductActivity extends AppCompatActivity implements ExpandableListView.OnChildClickListener {
 
     private ExpandableListView expandableListView;
     private List<String> objectsOfType;
@@ -22,7 +24,35 @@ public class ProductActivity extends AppCompatActivity {
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         fillData();
         expandableListView.setAdapter(new ItemsExpandableListAdapter(this, objectsOfType, types));
+        expandableListView.setOnChildClickListener(this);
 
+    }
+
+    @Override
+    public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+        switch (i){
+            case 0 :{
+                switch (i1){
+                    case 0 :{
+                        Toast.makeText(this, "Hello from " +i+" lvl "+" prel" + i1, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case 1: {
+                        Toast.makeText(this, "Hello from " +i+" lvl "+" prel" + i1, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case 2: {
+                        Toast.makeText(this, "Hello from " +i+" lvl "+" prel" + i1, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case 3:{
+                        Toast.makeText(this, "Hello from " +i+" lvl "+" prel" + i1, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+            }
+        }
+        return true;
     }
 
     private void fillData() {
