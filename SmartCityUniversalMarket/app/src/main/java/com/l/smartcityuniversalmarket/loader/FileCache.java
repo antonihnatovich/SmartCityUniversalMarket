@@ -6,11 +6,11 @@ import android.os.Environment;
 import java.io.File;
 
 public class FileCache {
-    File fileCache;
+     private File fileCache;
 
-    public FileCache(Context context, String cacheName) {
+    public FileCache(Context context) {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
-            fileCache = new File(Environment.getExternalStorageDirectory(), cacheName);
+            fileCache = new File(Environment.getExternalStorageDirectory(), "TMPName");
         else
             fileCache = context.getCacheDir();
         if (!fileCache.exists())
