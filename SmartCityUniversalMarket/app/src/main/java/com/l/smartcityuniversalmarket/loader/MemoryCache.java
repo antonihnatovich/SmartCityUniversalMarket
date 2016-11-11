@@ -1,6 +1,7 @@
 package com.l.smartcityuniversalmarket.loader;
 
 import android.graphics.Bitmap;
+import android.util.LruCache;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -8,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class MemoryCache {
+    LruCache<String, Bitmap> mmm = new LruCache<>(264);
     private static final String MEMORY_TAG = "MemoryCache";
     private Map<String, Bitmap> memoryCache = Collections.synchronizedMap(new LinkedHashMap<String, Bitmap>(20, 1.5f, true));
     private long size = 0,

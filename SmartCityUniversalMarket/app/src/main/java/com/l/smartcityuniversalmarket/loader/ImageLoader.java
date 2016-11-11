@@ -9,7 +9,12 @@ import android.widget.ImageView;
 import com.l.smartcityuniversalmarket.R;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Collections;
@@ -42,16 +47,71 @@ public class ImageLoader {
         }
     }
 
-    public static Bitmap getBitmapFromURL(String src) {
+    public Bitmap getBitmap(String url) {
+        File file = fileCache.getFile(url);
+        Bitmap bitmap = decodeFile(file);
+        if (bitmap != null)
+            return bitmap;
         try {
-            URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            return BitmapFactory.decodeStream(connection.getInputStream());
-        } catch (IOException e) {
+            URL urlToImage = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) urlToImage.openConnection();
+            connection.setConnectTimeout(50000);
+            connection.setReadTimeout(50000);
+            connection.setInstanceFollowRedirects(true);
+            InputStream inputStream = connection.getInputStream();
+            OutputStream outputStream = new FileOutputStream(file);
+            Utill.copyStream(inputStream, outputStream);
+            outputStream.close();
+            connection.disconnect();
+            return decodeFile(file);
+
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+            if (throwable instanceof OutOfMemoryError)
+                memoryCache.clear();
             return null;
         }
+    }
+
+    public Bitmap decodeFile(File file) {
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            FileInputStream fileInputStream = new FileInputStream(file);
+            BitmapFactory.decodeStream(fileInputStream, null, options);
+            fileInputStream.close();
+            final int PREDEFINED_SIZE = 100;
+            int width = options.outWidth,
+                    height = options.outHeight,
+                    scale = 1;
+            for (; ; ) {
+                if (width / 2 < PREDEFINED_SIZE || height / 2 < PREDEFINED_SIZE)
+                    break;
+                width /= 2;
+                height /= 2;
+                scale *= 2;
+            }
+            options = new BitmapFactory.Options();
+            options.inSampleSize = scale;
+            fileInputStream = new FileInputStream(file);
+            Bitmap bitmap = BitmapFactory.decodeStream(fileInputStream, null, options);
+            fileInputStream.close();
+            return bitmap;
+        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private boolean isImageViewReused(RequiredPhoto requiredPhoto) {
+        String tag = imageViews.get(requiredPhoto.imageView);
+        return (tag == null || !tag.equals(requiredPhoto.url));
+    }
+
+    public void clearCache() {
+        memoryCache.clear();
+        fileCache.clear();
     }
 
     private class RequiredPhoto {
@@ -76,7 +136,7 @@ public class ImageLoader {
             try {
                 if (isImageViewReused(requiredPhoto))
                     return;
-                Bitmap bitmap = getBitmapFromURL(requiredPhoto.url);
+                Bitmap bitmap = getBitmap(requiredPhoto.url);
                 memoryCache.put(requiredPhoto.url, bitmap);
                 if (isImageViewReused(requiredPhoto))
                     return;
@@ -108,9 +168,5 @@ public class ImageLoader {
         }
     }
 
-    private boolean isImageViewReused(RequiredPhoto requiredPhoto) {
-        String tag = imageViews.get(requiredPhoto.imageView);
-        return (tag == null || !tag.equals(requiredPhoto.url));
-    }
 
 }
