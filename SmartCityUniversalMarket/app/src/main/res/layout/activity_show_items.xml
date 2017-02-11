@@ -7,15 +7,9 @@
     android:orientation="vertical"
     tools:context="com.l.smartcityuniversalmarket.ShowItemsActivity">
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-    <Button
-        android:id="@+id/button1"
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Refresh cache"/>
+        android:id="@+id/image_si"/>
 
 </LinearLayout>

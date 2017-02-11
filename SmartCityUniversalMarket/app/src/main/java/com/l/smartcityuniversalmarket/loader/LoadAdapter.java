@@ -32,7 +32,7 @@ public class LoadAdapter extends BaseAdapter {
         ImageView image = (ImageView) view.findViewById(R.id.image);
         String str = "item" + position;
         text.setText(str);
-        imageLoader.displayImage(data[position], image);
+       // imageLoader.displayImage(data[position], image);
         return view;
     }
 

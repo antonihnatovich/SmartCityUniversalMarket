@@ -3,15 +3,15 @@ package com.l.smartcityuniversalmarket.loader;
 import android.graphics.Bitmap;
 import android.util.LruCache;
 
+import java.lang.ref.SoftReference;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class MemoryCache {
-    LruCache<String, Bitmap> mmm = new LruCache<>(264);
     private static final String MEMORY_TAG = "MemoryCache";
-    private Map<String, Bitmap> memoryCache = Collections.synchronizedMap(new LinkedHashMap<String, Bitmap>(20, 1.5f, true));
+    private Map<String, SoftReference<Bitmap>> memoryCache = Collections.synchronizedMap(new LinkedHashMap<String, SoftReference<Bitmap>>());
     private long size = 0,
             limit = 64 * 1024 * 1024;
 
@@ -24,47 +24,31 @@ public class MemoryCache {
     }
 
     public Bitmap get(String id) {
-        try {
-            if (memoryCache.containsKey(id))
-                return memoryCache.get(id);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-        return null;
+        if(!memoryCache.containsKey(id))
+            return null;
+        SoftReference<Bitmap> bitmapSoftReference = memoryCache.get(id);
+        return bitmapSoftReference.get();
     }
 
     public void put(String id, Bitmap bitmap) {
-        try {
-            if (memoryCache.containsKey(id))
-                size -= getSizeInBytes(memoryCache.get(id));
-            memoryCache.put(id, bitmap);
-            size += getSizeInBytes(bitmap);
-
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }
+        memoryCache.put(id, new SoftReference<Bitmap>(bitmap));
     }
 
-    private void checkSize() {
-        if (size > limit) {
-            Iterator<Map.Entry<String, Bitmap>> iterator = memoryCache.entrySet().iterator();
-            while (iterator.hasNext()) {
-                Map.Entry<String, Bitmap> entry = iterator.next();
-                size -= getSizeInBytes(entry.getValue());
-                iterator.remove();
-                if (size == limit)
-                    break;
-            }
-        }
-    }
+//    private void checkSize() {
+//        if (size > limit) {
+//            Iterator<Map.Entry<String, SoftReference<Bitmap>>> iterator = memoryCache.entrySet().iterator();
+//            while (iterator.hasNext()) {
+//                Map.Entry<String, Bitmap> entry = iterator.next();
+//                size -= getSizeInBytes(entry.getValue());
+//                iterator.remove();
+//                if (size == limit)
+//                    break;
+//            }
+//        }
+//    }
 
     public void clear() {
-        try {
-            memoryCache.clear();
-            size = 0;
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+        memoryCache.clear();
     }
 
     private long getSizeInBytes(Bitmap bitmap) {

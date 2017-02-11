@@ -1,9 +1,11 @@
 package com.l.smartcityuniversalmarket.loader;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
+import android.os.Looper;
 import android.widget.ImageView;
 
 import com.l.smartcityuniversalmarket.R;
@@ -25,18 +27,19 @@ import java.util.concurrent.Executors;
 
 public class ImageLoader {
     private Map<ImageView, String> imageViews = Collections.synchronizedMap(new WeakHashMap<ImageView, String>());
-    private MemoryCache memoryCache = new MemoryCache();
-    private final int onLoadImageId = R.drawable.food;
-    private Handler handler = new Handler();
-    private ExecutorService executorService;
-    private FileCache fileCache;
+     MemoryCache memoryCache = new MemoryCache();
+     //final int onLoadImageId = R.drawable.food;
+     Handler handler = new Handler();
+     ExecutorService executorService;
+     FileCache fileCache;
 
     public ImageLoader(Context context) {
         fileCache = new FileCache(context);
-        executorService = Executors.newFixedThreadPool(4);
+        executorService = Executors.newFixedThreadPool(5);
     }
-
-    public void displayImage(String url, ImageView imageView) {
+        int stubId = R.drawable.food;
+    public void displayImage(String url, int loader, ImageView imageView) {
+        stubId = loader;
         imageViews.put(imageView, url);
         Bitmap bitmap = memoryCache.get(url);
         if (bitmap != null)
@@ -44,6 +47,7 @@ public class ImageLoader {
         else {
             RequiredPhoto requiredPhoto = new RequiredPhoto(url, imageView);
             executorService.submit(new RequiredPhotoLoader(requiredPhoto));
+            imageView.setImageResource(loader);
         }
     }
 
@@ -55,8 +59,8 @@ public class ImageLoader {
         try {
             URL urlToImage = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) urlToImage.openConnection();
-            connection.setConnectTimeout(50000);
-            connection.setReadTimeout(50000);
+            connection.setConnectTimeout(100000);
+            connection.setReadTimeout(100000);
             connection.setInstanceFollowRedirects(true);
             InputStream inputStream = connection.getInputStream();
             OutputStream outputStream = new FileOutputStream(file);
@@ -65,10 +69,8 @@ public class ImageLoader {
             connection.disconnect();
             return decodeFile(file);
 
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-            if (throwable instanceof OutOfMemoryError)
-                memoryCache.clear();
+        } catch (Exception ex) {
+            ex.printStackTrace();
             return null;
         }
     }
@@ -80,7 +82,7 @@ public class ImageLoader {
             FileInputStream fileInputStream = new FileInputStream(file);
             BitmapFactory.decodeStream(fileInputStream, null, options);
             fileInputStream.close();
-            final int PREDEFINED_SIZE = 100;
+            final int PREDEFINED_SIZE = 70;
             int width = options.outWidth,
                     height = options.outHeight,
                     scale = 1;
@@ -91,10 +93,10 @@ public class ImageLoader {
                 height /= 2;
                 scale *= 2;
             }
-            options = new BitmapFactory.Options();
-            options.inSampleSize = scale;
+            BitmapFactory.Options options2 = new BitmapFactory.Options();
+            options2.inSampleSize = scale;
             fileInputStream = new FileInputStream(file);
-            Bitmap bitmap = BitmapFactory.decodeStream(fileInputStream, null, options);
+            Bitmap bitmap = BitmapFactory.decodeStream(fileInputStream, null, options2);
             fileInputStream.close();
             return bitmap;
         } catch (FileNotFoundException e) {
@@ -142,6 +144,7 @@ public class ImageLoader {
                     return;
                 BitmapDisplayer bitmapDisplayer = new BitmapDisplayer(bitmap, requiredPhoto);
                 handler.post(bitmapDisplayer);
+                //new Handler(Looper.getMainLooper()).post(bitmapDisplayer);
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
             }
@@ -164,7 +167,7 @@ public class ImageLoader {
             if (bitmap != null)
                 requiredPhoto.imageView.setImageBitmap(bitmap);
             else
-                requiredPhoto.imageView.setImageResource(onLoadImageId);
+                requiredPhoto.imageView.setImageResource(stubId);
         }
     }
 
